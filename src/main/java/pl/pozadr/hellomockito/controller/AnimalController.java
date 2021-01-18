@@ -1,7 +1,12 @@
 package pl.pozadr.hellomockito.controller;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import pl.pozadr.hellomockito.model.Animal;
 import pl.pozadr.hellomockito.service.AnimalService;
 
@@ -16,12 +21,16 @@ public class AnimalController {
         this.animalService = animalService;
     }
 
+    @GetMapping("/animals")
     public List<Animal> getAnimals() {
-        return animalService.findAllAnimals();
+        List<Animal> animalList = animalService.findAllAnimals();
+        return animalList;
     }
 
-    public Animal addAnimal(Animal newAnimal) {
-        return animalService.saveAnimal(newAnimal);
+    @PostMapping("/add-animal")
+    public Animal addAnimal(@RequestBody Animal newAnimal) {
+        Animal addedAnimal = animalService.saveAnimal(newAnimal);
+        return addedAnimal;
     }
 
 

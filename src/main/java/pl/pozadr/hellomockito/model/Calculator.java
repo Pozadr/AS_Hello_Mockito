@@ -1,4 +1,4 @@
-package pl.pozadr.hellomockito;
+package pl.pozadr.hellomockito.model;
 
 public class Calculator {
 
