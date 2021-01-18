@@ -15,10 +15,10 @@ import static org.mockito.Mockito.mock;
 class AnimalControllerTest {
 
     @Test
-    void should_get_animal_list() {
+    void should_check_animal_list_length() {
         // given
         AnimalController animalController = mock(AnimalController.class);
-        given(animalController.getAnimals()).willReturn(prepareMockData());
+        given(animalController.getAnimals()).willReturn(prepare_mock_data());
         // when
         Integer getAnimalsListLength = animalController.getAnimals().size();
         //than
@@ -36,7 +36,7 @@ class AnimalControllerTest {
         Assertions.assertEquals("Maxik", newAnimal.getName());
     }
 
-    private List<Animal> prepareMockData() {
+    private List<Animal> prepare_mock_data() {
         List<Animal> animalList = new ArrayList<>();
         animalList.add(new Animal("Max"));
         animalList.add(new Animal("Eli"));
