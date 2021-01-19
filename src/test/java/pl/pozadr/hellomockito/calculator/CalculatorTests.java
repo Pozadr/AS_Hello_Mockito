@@ -2,7 +2,7 @@ package pl.pozadr.hellomockito.calculator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pl.pozadr.hellomockito.model.Calculator;
+import pl.pozadr.hellomockito.Calculator;
 
 public class CalculatorTests {
 
