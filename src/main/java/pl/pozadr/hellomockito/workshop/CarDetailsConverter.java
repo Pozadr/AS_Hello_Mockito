@@ -12,12 +12,10 @@ public class CarDetailsConverter {
     private final OtherWorkshopCarDetailsService otherWorkshopCarDetailsService;
 
     public CarDetailsConverter(OtherWorkshopCarDetailsService otherWorkshopCarDetailsService) {
-
         this.otherWorkshopCarDetailsService = otherWorkshopCarDetailsService;
     }
 
     public List<CarDetails> convertAll() {
-
         List<OtherWorkshopCarDetailsDTO> toConvert = otherWorkshopCarDetailsService.findCarDetailsToAnalyze();
         return toConvert.stream() //
                 .map(this::convert) //
@@ -25,7 +23,6 @@ public class CarDetailsConverter {
     }
 
     CarDetails convert(OtherWorkshopCarDetailsDTO dto) {
-
         CarDetails details = new CarDetails();
         details.setId(String.valueOf(dto.getId()));
         details.setCarMillage(dto.getCarMillage());

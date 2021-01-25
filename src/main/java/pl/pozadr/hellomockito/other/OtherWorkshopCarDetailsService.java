@@ -7,7 +7,6 @@ import java.util.List;
 public class OtherWorkshopCarDetailsService {
 
     public List<OtherWorkshopCarDetailsDTO> findCarDetailsToAnalyze() {
-
         //DB operations
         return new ArrayList<>(dbContent());
     }
